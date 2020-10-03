@@ -67,3 +67,36 @@ let videoS = new Serie(musica, pelicula, serie);
 videoM.mostrarMusica();
 videoP.mostrarPelicula();
 videoS.mostrarSeries();
+
+//Variables privadas
+const videos = (() => {
+    {
+         let musica = document.getElementById('musica');
+         let pelicula = document.getElementById('peliculas');
+         let series = document.getElementById('series');
+
+         let fpMusica = (vMusica) => {
+              musica.insertAdjacentHTML('musica', vMusica);
+         };
+
+         let fpPeliculas = (vPelicula) => {
+              pelicula.insertAdjacentHTML('película', vPelicula);
+         };
+
+         let fpSeries = (vSeries) => {
+              series.insertAdjacentHTML('series', vSeries);
+         };
+
+         return {
+              pfMusica: (musicaV) => {
+                   fpMusica(musicaV);
+              },
+              pfPelicula: (peliculasV) => {
+                   fpPeliculas(peliculasV);
+              },
+              pfSeries: (seriesV) => {
+                   fpSeries(seriesV);
+              },
+         };
+    }
+})();
